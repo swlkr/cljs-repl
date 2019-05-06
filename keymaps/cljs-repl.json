@@ -1,0 +1,15 @@
+{
+  "atom-workspace": {
+    "ctrl-alt-c": "cljs-repl:connect",
+    "ctrl-alt-d": "cljs-repl:disconnect"
+  },
+  ".cljs-repl": {
+    "escape": "cljs-repl:hidePanel"
+  },
+  ".cljs-repl input": {
+    "enter": "cljs-repl:connect2"
+  },
+  "atom-text-editor.vim-mode-plus.normal-mode[data-grammar=\"source clojure\"]": {
+    "cmd+enter": "cljs-repl:send"
+  }
+}

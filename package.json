@@ -7,9 +7,7 @@
   ],
   "activationCommands": {
     "atom-workspace": [
-      "cljs-repl:connect",
-      "cljs-repl:send",
-      "cljs-repl:disconnect"
+      "cljs-repl:connection"
     ]
   },
   "repository": "https://github.com/atom/cljs-repl",

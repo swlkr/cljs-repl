@@ -2,9 +2,7 @@
   (:require [cljs-repl.helpers :as helpers]
             [goog.object]
             [net]
-            [cljs.reader]
-            [cljs.pprint :as pprint]
-            [fipp.edn]))
+            [cljs.reader]))
 
 
 (def element (.createElement js/document "div"))
@@ -13,12 +11,6 @@
 
 (def modalPanel (-> js/atom .-workspace (.addModalPanel #js {:item element :visible false})))
 (def client (net/Socket.))
-
-
-(defn pretty-print [s]
-  (second
-   (re-find #"\"(.*)\""
-            (with-out-str (fipp.edn/pprint s)))))
 
 
 (defn update-repl [editor m]

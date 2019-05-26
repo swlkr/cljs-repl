@@ -43,7 +43,6 @@
                               (-> js/atom .-workspace (.observeTextEditors #(update-repl % data)))))))
 
 
-
     (-> client (.on "close" (fn []
                               (-> js/atom .-notifications (.addInfo "Connection closed")))))
 
@@ -61,7 +60,8 @@
 (set! (.-value input) "localhost:5555")
 (aset input "onkeydown" (fn [event] (condp = (.-key event)
                                       "Escape" (.hide modalPanel)
-                                      "Enter" (connect input))))
+                                      "Enter" (connect input)
+                                      "")))
 (.appendChild element input)
 
 
@@ -81,6 +81,12 @@
     (-> client (.write s))))
 
 
+(defn clear []
+  (-> js/atom .-workspace (.observeTextEditors (fn [editor]
+                                                (when (= "CLJS REPL" (.getTitle editor))
+                                                  (.setText editor ""))))))
+
+
 (defn disconnect []
   (.destroy client))
 
@@ -88,6 +94,7 @@
 (defn- activate [state]
   (helpers/add-command "connection" connection)
   (helpers/add-command "send" send)
+  (helpers/add-command "clear" clear)
   (helpers/add-command "disconnect" disconnect))
 
 

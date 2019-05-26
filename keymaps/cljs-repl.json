@@ -1,7 +1,8 @@
 {
   "atom-workspace": {
     "ctrl-alt-c": "cljs-repl:connection",
-    "ctrl-alt-d": "cljs-repl:disconnect"
+    "ctrl-alt-d": "cljs-repl:disconnect",
+    "ctrl-alt-v": "cljs-repl:clear"
   },
   ".cljs-repl": {
     "escape": "cljs-repl:hide"
@@ -9,10 +10,7 @@
   ".cljs-repl input": {
     "enter": "cljs-repl:connect"
   },
-  "atom-text-editor.vim-mode-plus.normal-mode[data-grammar=\"source.clojure\"]": {
-    "cmd+enter": "cljs-repl:send"
-  },
-  "atom-text-editor[data-grammar=\"source.clojure\"]": {
-    "cmd+enter": "cljs-repl:send"
+  "atom-text-editor.vim-mode-plus.normal-mode[data-grammar=\"source clojure\"]": {
+    "cmd-enter": "cljs-repl:send"
   }
 }

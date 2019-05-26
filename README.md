@@ -1,5 +1,15 @@
 # cljs-repl package
 
-A short description of your package.
+The world's worst clojurescript prepl client.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![screenshot](https://i.imgur.com/r16GVHH.gif)
+
+Not really for use, more for learning.
+
+But if you're really curious, start a repl like this:
+
+```bash
+clj -J-Dclojure.server.node="{:port 5555 :accept cljs.server.node/prepl}" -m cljs.main --repl-env node
+```
+
+and connect to it from atom like this: Shift+Cmd+P -> cljs-repl:connection -> enter.
